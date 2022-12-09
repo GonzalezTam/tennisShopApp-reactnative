@@ -1,4 +1,4 @@
-const Colors = {
+const COLORS = {
   primary: '#5FAD56',
   primaryDark: '#3d7c34',
   primaryLight: '#a4d19f',
@@ -8,16 +8,20 @@ const Colors = {
   third: '#F78154',
   thirdDark: '#d6440a',
   thirdLight: '#F9AA8A',
-  header: '#fdf1d8',
-  background: '#FFF7E7',
+  banner: '#A9DBEE',
+  header: '#424242',
+  background: '#FFFFFF',
   backgroundDark: '#FDF1D8',
-  //backgroundSecondary: '#fef8ec',
-  //backgroundSecondaryDark: '#fdf1d8',
+  backgroundSecondary: '#424242',
+  backgroundSecondaryDark: '#000000',
   text: '#000',
   textLight: '#212121',
+  textShiny: '#FC434F',
   white: '#fff',
   black: '#000',
   gray: '#ccc',
+  darkGray: '#666',
+  lightGray: '#eee',
 };
 
-export default Colors;
+export default COLORS;

@@ -1,20 +1,37 @@
 import React from 'react';
-import { Text, View, Button } from 'react-native';
+import { Image, Text, View, Button } from 'react-native';
 
-import colors from '../../constants/colors';
+import { PRODUCTS } from '../../constants/data/products';
+import COLORS from '../../constants/themes/colors';
 import { styles } from './styles';
 
-const Product = ({ navigation }) => {
+const Product = ({ navigation, route }) => {
+  const { productId } = route.params;
+
+  const product = PRODUCTS.find((product) => product.id === productId);
+  const { title, description, price } = product || {};
+
   return (
     <View style={styles.container}>
-      <Text>Product</Text>
-      <View style={styles.buttonContainer}>
-        <Button
-          color={colors.primary}
-          title="Go Back"
-          onPress={() => navigation.navigate('Products')}
-        />
+      <View style={styles.productCard}>
+        <View style={styles.imageContainer}>
+          <Image
+            style={styles.image}
+            source={{
+              uri: 'https://placeimg.com/580/480/any',
+            }}
+          />
+        </View>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.price}>Price: ${price}</Text>
+        <Text style={styles.description}>{description}</Text>
       </View>
+      <Button
+        title="Add to cart"
+        color={COLORS.primary}
+        onPress={() => console.warn('Add to cart')}
+        //onPress={() => navigation.navigate('Cart')}
+      />
     </View>
   );
 };
