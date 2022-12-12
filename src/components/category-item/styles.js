@@ -4,7 +4,7 @@ import COLORS from '../../constants/themes/colors';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height: 160,
+    height: 150,
     marginHorizontal: 10,
     borderRadius: 10,
     marginTop: StatusBar.currentHeight || 10,
@@ -23,7 +23,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginVertical: 10,
-    marginHorizontal: 5,
+    marginHorizontal: 10,
     backgroundColor: COLORS.primaryLight,
   },
   categoryItemText: {
