@@ -1,14 +1,12 @@
 import React from 'react';
 import { Image, Text, View, Button } from 'react-native';
+import { useSelector } from 'react-redux';
 
-import { PRODUCTS } from '../../constants/data/products';
 import COLORS from '../../constants/themes/colors';
 import { styles } from './styles';
 
-const Product = ({ navigation, route }) => {
-  const { productId } = route.params;
-
-  const product = PRODUCTS.find((product) => product.id === productId);
+const Product = ({ navigation }) => {
+  const product = useSelector((state) => state.products.selectedProduct);
   const { title, description, price } = product || {};
 
   return (
