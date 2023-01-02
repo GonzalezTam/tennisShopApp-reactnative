@@ -1,4 +1,5 @@
 /* eslint-disable no-case-declarations */
+import { sumTotal } from '../../utils';
 import { cartTypes } from '../types';
 
 const { ADD_TO_CART, REMOVE_FROM_CART, CONFIRM_ORDER } = cartTypes;
@@ -7,12 +8,6 @@ const initialState = {
   total: 0,
   errors: null,
 };
-
-const sumTotal = (items) =>
-  items
-    ?.map((item) => item.price * item.quantity)
-    ?.reduce((a, b) => a + b, 0)
-    .toFixed(2);
 
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {

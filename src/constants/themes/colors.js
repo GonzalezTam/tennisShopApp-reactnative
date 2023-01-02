@@ -22,6 +22,7 @@ const COLORS = {
   gray: '#ccc',
   darkGray: '#666',
   lightGray: '#eee',
+  helperText: '#C0353C',
 };
 
 export default COLORS;
