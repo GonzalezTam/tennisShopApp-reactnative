@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
   },
   list: {
     flex: 1,
+    minWidth: '90%',
   },
   footer: {
     flexDirection: 'row',
@@ -18,7 +19,7 @@ export const styles = StyleSheet.create({
     width: '100%',
     borderTopWidth: 1,
     borderTopColor: COLORS.secondaryDark,
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     paddingHorizontal: 50,
   },
   totalContainer: {
@@ -36,11 +37,19 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     color: '#000',
   },
-  confirmButton: {
+  confirmButtonDisabled: {
     marginHorizontal: 20,
     backgroundColor: COLORS.gray,
     borderRadius: 3,
     padding: 5,
+    paddingHorizontal: 10,
+  },
+  confirmButtonEnabled: {
+    marginHorizontal: 20,
+    backgroundColor: COLORS.primary,
+    borderRadius: 3,
+    padding: 5,
+    paddingHorizontal: 10,
   },
   confirmButtonText: {
     fontFamily: 'Lato-Regular',

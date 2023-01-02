@@ -1,6 +1,7 @@
 import { FontAwesome } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import COLORS from '../constants/themes/colors';
 import CartNavigator from './cart';
@@ -10,6 +11,7 @@ import ShopNavigator from './shop';
 const BottomTab = createBottomTabNavigator();
 
 const Tabs = () => {
+  const cart = useSelector((state) => state.cart.items);
   return (
     <BottomTab.Navigator
       initialRouteName="ShopTab"
@@ -57,6 +59,8 @@ const Tabs = () => {
               color={focused ? COLORS.darkGray : COLORS.lightGray}
             />
           ),
+          tabBarBadge: cart.length === 0 ? null : cart.length,
+          tabBarBadgeStyle: { backgroundColor: COLORS.primary, color: COLORS.white },
         }}
       />
     </BottomTab.Navigator>
